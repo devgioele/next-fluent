@@ -1,0 +1,6 @@
+# Artifacts
+node_modules
+dist
+
+# Automatically generated files
+pnpm-lock.yaml
