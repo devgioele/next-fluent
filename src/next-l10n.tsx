@@ -1,3 +1,4 @@
+import 'intl-polyfill';
 import React from 'react';
 import {
   LocalizationProvider,
