@@ -1,4 +1,4 @@
-import 'intl-polyfill';
+import 'intl-pluralrules';
 import React from 'react';
 import {
   LocalizationProvider,
