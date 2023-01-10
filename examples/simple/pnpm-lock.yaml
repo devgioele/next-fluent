@@ -5,7 +5,7 @@ specifiers:
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
   next: ^13.0.7
-  next-fluent: ^0.1.0
+  next-fluent: ^0.2.1
   react: ^18.2.0
   react-dom: ^18.2.0
   rimraf: ^3.0.2
@@ -13,7 +13,7 @@ specifiers:
 
 dependencies:
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
-  next-fluent: 0.1.0
+  next-fluent: 0.2.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -386,8 +386,8 @@ packages:
     hasBin: true
     dev: false
 
-  /next-fluent/0.1.0:
-    resolution: {integrity: sha512-GPGZeIaakGwOr4fi+m27ltCRL/7PjPrDddsAO3U1vn0NFkq9uupChfkB+8xn2UBc8e0lL6OQGjVmm6lIkxq7dw==}
+  /next-fluent/0.2.1:
+    resolution: {integrity: sha512-CwATsUXRrycIEHNp+xs6toa8lVeyG6FkozQ1GqE6w2Pb5ToYSmbAH78b1LB9+UjmB+grVaDb4eJBk/JwGDAKMw==}
     engines: {node: '>=18'}
     dependencies:
       '@fluent/bundle': 0.17.1

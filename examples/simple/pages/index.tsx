@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
+import { Localized, serverSideTranslations, useLocalization } from 'next-fluent'
 
 type Props = {
   // Add custom props here
@@ -13,7 +13,7 @@ const Homepage = (
   _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
   const router = useRouter()
-  const { t } = useTranslation('common')
+  const { l10n } = useLocalization()
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onToggleLanguageClick = (newLocale: string) => {
@@ -26,20 +26,20 @@ const Homepage = (
   return (
     <>
       <main>
-        <Header heading={t('h1')} title={t('title')} />
+        <Header heading={l10n.getString('h1')} title={l10n.getString('title')} />
         <div style={{ display: 'inline-flex', width: '90%' }}>
           <div style={{ width: '33%' }}>
             <h3 style={{ minHeight: 70 }}>
-              {t('blog.appDir.question')}
+              {l10n.getString('blog.appDir.question')}
             </h3>
             <p>
-              <Trans i18nKey="blog.appDir.answer">
+              <Localized id="blog.appDir.answer">
                 Then check out 
-                <a href={t('blog.optimized.link')}>this blog post</a>
+                <a href={l10n.getString('blog.optimized.link')}>this blog post</a>
                 .
-              </Trans>
+              </Localized>
             </p>
-            <a href={t('blog.appDir.link')}>
+            <a href={l10n.getString('blog.appDir.link')}>
               <img
                 style={{ width: '50%' }}
                 src="https://locize.com/blog/next-13-app-dir-i18n/next-13-app-dir-i18n.jpg"
@@ -48,16 +48,16 @@ const Homepage = (
           </div>
           <div style={{ width: '33%' }}>
             <h3 style={{ minHeight: 70 }}>
-              {t('blog.optimized.question')}
+              {l10n.getString('blog.optimized.question')}
             </h3>
             <p>
-              <Trans i18nKey="blog.optimized.answer">
+              <Localized id="blog.optimized.answer">
                 Then you may have a look at
-                <a href={t('blog.optimized.link')}>this blog post</a>
+                <a href={l10n.getString('blog.optimized.link')}>this blog post</a>
                 .
-              </Trans>
+              </Localized>
             </p>
-            <a href={t('blog.optimized.link')}>
+            <a href={l10n.getString('blog.optimized.link')}>
               <img
                 style={{ width: '50%' }}
                 src="https://locize.com/blog/next-i18next/next-i18next.jpg"
@@ -66,15 +66,15 @@ const Homepage = (
           </div>
           <div style={{ width: '33%' }}>
             <h3 style={{ minHeight: 70 }}>
-              {t('blog.ssg.question')}
+              {l10n.getString('blog.ssg.question')}
             </h3>
             <p>
-              <Trans i18nKey="blog.ssg.answer">
+              <Localized id="blog.ssg.answer">
                 Then you may have a look at
-                <a href={t('blog.ssg.link')}>this blog post</a>.
-              </Trans>
+                <a href={l10n.getString('blog.ssg.link')}>this blog post</a>.
+              </Localized>
             </p>
-            <a href={t('blog.ssg.link')}>
+            <a href={l10n.getString('blog.ssg.link')}>
               <img
                 style={{ width: '50%' }}
                 src="https://locize.com/blog/next-i18n-static/title.jpg"
@@ -85,15 +85,15 @@ const Homepage = (
         <hr style={{ marginTop: 20, width: '90%' }} />
         <div>
           <Link href="/" locale={changeTo}>
-            <button>{t('change-locale', { changeTo })}</button>
+            <button>{l10n.getString('change-locale', { changeTo })}</button>
           </Link>
           {/* alternative language change without using Link component
           <button onClick={() => onToggleLanguageClick(changeTo)}>
-            {t('change-locale', { changeTo })}
+            {l10n.getString('change-locale', { changeTo })}
           </button>
           */}
           <Link href="/second-page">
-            <button type="button">{t('to-second-page')}</button>
+            <button type="button">{l10n.getString('to-second-page')}</button>
           </Link>
         </div>
       </main>
@@ -107,10 +107,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
 }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'en', [
-      'common',
-      'footer',
-    ])),
+    ...(await serverSideTranslations(locale)),
   },
 })
 

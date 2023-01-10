@@ -1,12 +1,14 @@
+import pkg from 'next-fluent/package.json'
+import { Localized, useLocalization } from 'next-fluent'
 import type { FC } from 'react'
 
 export const Footer: FC = () => {
-  const { t } = useTranslation('footer')
+  const { l10n } = useLocalization()
 
   return (
     <footer>
-      <p>{t('description')}</p>
-      <p>next-i18next v{pkg.version}</p>
+      <p>{l10n.getString('description')}</p>
+      <p>next-fluent v{pkg.version}</p>
       <p
         style={{
           fontSize: 'smaller',
@@ -14,17 +16,10 @@ export const Footer: FC = () => {
           marginTop: 20,
         }}
       >
-        <Trans i18nKey="helpLocize" t={t}>
-          With using 
-          <a href="https://locize.com" target="_new">
-            locize
-          </a>
-          you directly support the future of
-          <a href="https://www.i18next.com" target="_new">
-            i18next
-          </a>
-          .
-        </Trans>
+        <Localized id="helpFluent" elems={{
+          1:    <a href="https://projectfluent.com" target="_new" />
+        }}>
+        </Localized>
       </p>
     </footer>
   )

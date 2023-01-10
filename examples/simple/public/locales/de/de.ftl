@@ -20,7 +20,7 @@ blog =
 
 footer =
   .description = Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert
-  .helpLocize = Wenn Sie <1>locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.
+  .helpFluent = Indem Sie <1>Fluent</1> einsetzen, helfen Sie das Wort zu verbreiten und andere ein besseres Localisierungssystem zu verwenden.
 
 second-page =
   .h1 = Eine zweite Seite, um das Routing zu demonstrieren
