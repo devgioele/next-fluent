@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:true});Object.defineProperty(exports,"serverSideTranslations",{enumerable:true,get:()=>_server.serverSideTranslations});const _server=require("./server");

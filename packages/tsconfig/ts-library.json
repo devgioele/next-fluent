@@ -1,4 +1,7 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "TypeScript Library",
+  "extends": "./base.json",
   "compilerOptions": {
     "lib": ["esnext", "dom"],
     "target": "esnext",
@@ -8,6 +11,5 @@
     "strict": true,
     "noImplicitAny": true,
     "jsx": "react"
-  },
-  "include": ["src/**/*"]
+  }
 }

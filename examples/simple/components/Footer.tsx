@@ -1,13 +1,13 @@
-import pkg from 'next-fluent/package.json'
-import { Localized, useLocalization } from 'next-fluent'
-import type { FC } from 'react'
+import pkg from 'next-fluent-next/package.json';
+import { Localized, useLocalization } from 'next-fluent-next';
+import type { FC } from 'react';
 
 export const Footer: FC = () => {
-  const { l10n } = useLocalization()
-
   return (
     <footer>
-      <p>{l10n.getString('description')}</p>
+      <Localized id='footer-description'>
+        <p />
+      </Localized>
       <p>next-fluent v{pkg.version}</p>
       <p
         style={{
@@ -16,11 +16,13 @@ export const Footer: FC = () => {
           marginTop: 20,
         }}
       >
-        <Localized id="helpFluent" elems={{
-          1:    <a href="https://projectfluent.com" target="_new" />
-        }}>
-        </Localized>
+        <Localized
+          id='footer-help-fluent'
+          elems={{
+            link: <a href='https://projectfluent.com' target='_new' />,
+          }}
+        ></Localized>
       </p>
     </footer>
-  )
-}
+  );
+};
