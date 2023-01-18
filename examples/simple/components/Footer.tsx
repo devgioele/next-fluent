@@ -9,20 +9,20 @@ export const Footer: FC = () => {
         <p />
       </Localized>
       <p>next-fluent v{pkg.version}</p>
-      <p
-        style={{
-          fontSize: 'smaller',
-          fontStyle: 'italic',
-          marginTop: 20,
+      <Localized
+        id='footer-help-fluent'
+        elems={{
+          redirect: <a href='https://projectfluent.com' target='_new' />,
         }}
       >
-        <Localized
-          id='footer-help-fluent'
-          elems={{
-            link: <a href='https://projectfluent.com' target='_new' />,
+        <p
+          style={{
+            fontSize: 'smaller',
+            fontStyle: 'italic',
+            marginTop: 20,
           }}
-        ></Localized>
-      </p>
+        />
+      </Localized>
     </footer>
   );
 };

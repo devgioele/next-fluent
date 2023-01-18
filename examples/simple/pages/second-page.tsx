@@ -18,12 +18,12 @@ const SecondPage = (
     <>
       <main>
         <Header
-          heading={l10n.getString('second-page:h1')}
-          title={l10n.getString('second-page:title')}
+          heading={l10n.getString('second-page-h1')}
+          title={l10n.getString('second-page-title')}
         />
         <Link href='/'>
           <button type='button'>
-            {l10n.getString('second-page:back-to-home')}
+            {l10n.getString('second-page-back-to-home')}
           </button>
         </Link>
       </main>

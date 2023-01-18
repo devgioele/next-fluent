@@ -34,42 +34,34 @@ const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Localized id='blog-app-dir-question'>
               <h3 style={{ minHeight: 70 }} />
             </Localized>
-            <p>
-              {/* TODO: See if the href is right */}
-              <Localized
-                id='blog-app-dir-answer'
-                elems={{
-                  link: (
-                    <Localized id='blog-app-dir-href' attrs={{ href: true }}>
-                      <a href='' />
-                    </Localized>
-                  ),
-                }}
-              ></Localized>
-            </p>
-            <Localized id='blog-app-dir-answer' attrs={{ href: true }}>
-              <a href=''>
-                <img
-                  style={{ width: '50%' }}
-                  src='https://locize.com/blog/next-13-app-dir-i18n/next-13-app-dir-i18n.jpg'
-                />
-              </a>
+            <Localized
+              id='blog-app-dir-answer'
+              elems={{
+                redirect: <Link href='https://nextjs.org' />,
+              }}
+            >
+              <p />
             </Localized>
+            <a href={l10n.getString('blog-app-dir-link')}>
+              <img
+                style={{ width: '50%' }}
+                src='https://locize.com/blog/next-13-app-dir-i18n/next-13-app-dir-i18n.jpg'
+              />
+            </a>
           </div>
-          {/* <div style={{ width: '33%' }}>
-            <h3 style={{ minHeight: 70 }}>
-              {l10n.getString('blog-optimized.question')}
-            </h3>
-            <p>
-              <Localized id='blog-optimized.answer'>
-                Then you may have a look at
-                <a href={l10n.getString('blog-optimized.link')}>
-                  this blog post
-                </a>
-                .
-              </Localized>
-            </p>
-            <a href={l10n.getString('blog-optimized.link')}>
+          <div style={{ width: '33%' }}>
+            <Localized id='blog-optimized-question'>
+              <h3 style={{ minHeight: 70 }} />
+            </Localized>
+            <Localized
+              id='blog-optimized-answer'
+              elems={{
+                redirect: <Link href={l10n.getString('blog-optimized-link')} />,
+              }}
+            >
+              <p />
+            </Localized>
+            <a href={l10n.getString('blog-optimized-link')}>
               <img
                 style={{ width: '50%' }}
                 src='https://locize.com/blog/next-i18next/next-i18next.jpg'
@@ -78,29 +70,30 @@ const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
           </div>
           <div style={{ width: '33%' }}>
             <h3 style={{ minHeight: 70 }}>
-              {l10n.getString('blog-ssg.question')}
+              {l10n.getString('blog-ssg-question')}
             </h3>
-            <p>
-              <Localized id='blog-ssg.answer'>
-                Then you may have a look at
-                <a href={l10n.getString('blog-ssg.link')}>this blog post</a>.
-              </Localized>
-            </p>
-            <a href={l10n.getString('blog-ssg.link')}>
+            <Localized
+              id='blog-ssg-answer'
+              elems={{
+                redirect: <Link href={l10n.getString('blog-ssg-link')} />,
+              }}
+            >
+              <p />
+            </Localized>
+            <a href={l10n.getString('blog-ssg-link')}>
               <img
                 style={{ width: '50%' }}
                 src='https://locize.com/blog/next-i18n-static/title.jpg'
               />
             </a>
           </div>
-          */}
         </div>
         <hr style={{ marginTop: 20, width: '90%' }} />
         <div>
           <Link href='/' locale={changeTo}>
             <button>{l10n.getString('change-locale', { changeTo })}</button>
           </Link>
-          {/* alternative language change without using Link component
+          {/* Alternative language change without using Link component
           <button onClick={() => onToggleLanguageClick(changeTo)}>
             {l10n.getString('change-locale', { changeTo })}
           </button>
