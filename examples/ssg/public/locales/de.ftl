@@ -19,5 +19,6 @@ footer-description = Dies ist eine Nicht-Seitenkomponente, die einen eigenen Nam
 footer-help-fluent = Indem Sie <redirect>Fluent</redirect> einsetzen, helfen Sie andere von einem besserem Localisierungssystem zu erfahren.
 
 second-page-h1 = Eine zweite Seite, um das Routing zu demonstrieren
-second-page-back-to-home = Zurück zur Hauptseite
 second-page-title = Zweite Seite | next-fluent
+
+back-to-home = Zurück zur Hauptseite

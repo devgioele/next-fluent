@@ -1,4 +1,5 @@
 {
   "extends": "tsconfig/ts-library.json",
-  "include": ["src"]
+  "include": ["src"],
+  "composite": true
 }

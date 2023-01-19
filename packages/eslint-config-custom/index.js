@@ -1,5 +1,12 @@
 module.exports = {
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next", "turbo", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "next",
+    "turbo",
+    "prettier"
+  ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   root: true,
@@ -14,6 +21,7 @@ module.exports = {
       "caughtErrorsIgnorePattern": '^_',
       "destructuredArrayIgnorePattern": '^_',
     }],
-    "no-console": "warn"
+    "no-console": "warn",
+    "curly": ["error", "all"]
   },
 };

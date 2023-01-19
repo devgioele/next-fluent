@@ -19,5 +19,6 @@ footer-description = This is a non-page component
 footer-help-fluent = By using <redirect>Fluent</redirect> you help spread the word of a better localization system
 
 second-page-h1 = A second page, to demonstrate routing
-second-page-back-to-home = Back to home
 second-page-title = Second page | next-fluent
+
+back-to-home = Back to home

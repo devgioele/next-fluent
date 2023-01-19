@@ -4,5 +4,9 @@
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "references": [
+    { "path": "../../packages/next" },
+    { "path": "../../packages/ssg" }
+  ]
 }

@@ -1,5 +1,5 @@
 import pkg from 'next-fluent-next/package.json';
-import { Localized, useLocalization } from 'next-fluent-next';
+import { Localized } from 'next-fluent-next';
 import type { FC } from 'react';
 
 export const Footer: FC = () => {

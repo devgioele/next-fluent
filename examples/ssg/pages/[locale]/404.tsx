@@ -5,7 +5,7 @@ import Link from 'components/Link';
 import { useLocalization } from 'next-fluent-next';
 import { InferGetStaticPropsType } from 'next';
 
-const Homepage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { l10n } = useLocalization();
 
   return (
@@ -17,9 +17,7 @@ const Homepage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         />
         <div>
           <Link href='/'>
-            <button type='button'>
-              {l10n.getString('common:back-to-home')}
-            </button>
+            <button type='button'>{l10n.getString('back-to-home')}</button>
           </Link>
         </div>
       </main>

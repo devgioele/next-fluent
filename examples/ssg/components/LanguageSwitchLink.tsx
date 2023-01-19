@@ -14,14 +14,15 @@ const LanguageSwitchLink: FC<LanguageSwitchLinkProps> = ({ locale, href }) => {
   let parsedHref = typeof href === 'string' ? href : href.href || router.asPath;
   let pName = router.pathname;
   Object.keys(router.query).forEach((k) => {
-    if(k==='locale') {
+    if (k === 'locale') {
       pName = pName.replace('[locale]', definedLocale);
       return;
     }
     pName = pName.replace(`[${k}]`, singleElement(router.query[k]) || '');
   });
-  if (definedLocale)
-    {parsedHref = parsedHref ? `/${definedLocale}${parsedHref}` : pName;}
+  if (definedLocale) {
+    parsedHref = parsedHref ? `/${definedLocale}${parsedHref}` : pName;
+  }
 
   return (
     <Link href={parsedHref}>

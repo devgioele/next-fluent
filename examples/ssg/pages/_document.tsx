@@ -3,7 +3,7 @@ import type { DocumentProps } from 'next/document';
 import nextConfig from 'next.config';
 
 type Props = DocumentProps & {
-  // add custom document props
+  // Add custom document props
 };
 
 class MyDocument extends Document<Props> {

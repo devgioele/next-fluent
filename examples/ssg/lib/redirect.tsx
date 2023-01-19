@@ -5,21 +5,23 @@ import languageDetector from 'lib/languageDetector';
 export const useRedirect = (to?: string) => {
   const router = useRouter();
 
-  // language detection
+  // Language detection
   useEffect(() => {
-    to = to || router.asPath;
+    const redirectPath = to || router.asPath;
     const detectedLng = languageDetector.detect();
-    if (to.startsWith('/' + detectedLng) && router.route === '/404') {
+    if (redirectPath.startsWith('/' + detectedLng) && router.route === '/404') {
       // prevent endless loop
       router.replace('/' + detectedLng + router.route);
       return;
     }
 
-    // If possible, save the language for faster future access
-    if (languageDetector.cache && detectedLng)
+    // If possible, save the language for faster future detection
+    if (languageDetector.cache && detectedLng) {
       languageDetector.cache(detectedLng);
-    router.replace('/' + detectedLng + to);
-  }, []);
+    }
+    console.log(`Replacing ${detectedLng} with ${redirectPath}.`);
+    router.replace('/' + detectedLng + redirectPath);
+  }, [router, to]);
 
   return <></>;
 };

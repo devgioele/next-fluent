@@ -21,7 +21,9 @@ const L10nLink: FC<L10nLinkProps> = ({
 
   let parsedHref = typeof href === 'string' ? href : href.href || router.asPath;
   // Do not localize external links
-  if (parsedHref.indexOf('http') === 0) skipLocaleHandling = true;
+  if (parsedHref.indexOf('http') === 0) {
+    skipLocaleHandling = true;
+  }
   if (definedLocale && !skipLocaleHandling) {
     parsedHref = parsedHref
       ? `/${definedLocale}${parsedHref}`

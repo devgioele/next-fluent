@@ -5,6 +5,7 @@ import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
 import { Localized, useLocalization } from 'next-fluent-next';
 import { getStaticPaths, makeStaticProps } from 'lib/getStatic';
+import Image from 'next/image';
 
 const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
@@ -39,7 +40,8 @@ const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               <p />
             </Localized>
             <a href={l10n.getString('blog-app-dir-link')}>
-              <img
+              <Image
+                alt=''
                 style={{ width: '50%' }}
                 src='https://locize.com/blog/next-13-app-dir-i18n/next-13-app-dir-i18n.jpg'
               />
@@ -58,7 +60,8 @@ const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               <p />
             </Localized>
             <a href={l10n.getString('blog-optimized-link')}>
-              <img
+              <Image
+                alt=''
                 style={{ width: '50%' }}
                 src='https://locize.com/blog/next-i18next/next-i18next.jpg'
               />
@@ -77,7 +80,8 @@ const Homepage = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               <p />
             </Localized>
             <a href={l10n.getString('blog-ssg-link')}>
-              <img
+              <Image
+                alt=''
                 style={{ width: '50%' }}
                 src='https://locize.com/blog/next-i18n-static/title.jpg'
               />
