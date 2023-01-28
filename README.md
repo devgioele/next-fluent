@@ -16,6 +16,15 @@ This is a WIP and there are currently two main obstacles that I don't know how t
 
 *Coming soon...*
 
+## Caveats
+
+There are some non-obvious prohibited usages due to current limitations of [@fluent/react](https://github.com/projectfluent/fluent.js/tree/master/fluent-react).
+When using the `elems` attribute of the `Localized` element, thus using the React overlays mechanism,
+pay attention to the following:
+
+- `Localized` must have one child element
+- The identifiers used in the `elems` record cannot be numbers or HTML elements
+
 ## How it works
 
 Makes a bridge between [@fluent/react](https://github.com/projectfluent/fluent.js/tree/master/fluent-react)
